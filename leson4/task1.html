@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        class DivNumber {
+            constructor() {
+                this.units = 0;
+                this.tens = 0;
+                this.hundreds = 0;
+            }
+            partNum(num) {
+                if (typeof (num) != 'number') {
+                    throw new Error('вы вели не число');
+                } else if (String(num).length > 3) {
+                    throw new Error('число больше диапазона');
+                }
+                num = String(num);
+                num = num.split('');
+                let argNumLen = num.length;
+                for (let i = 0; i < argNumLen; i++) {
+                    switch (i) {
+                        case 0:
+                            this.hundreds = num.pop();
+                            break;
+                        case 1:
+                            this.tens = num.pop();
+                            break;
+                        case 2:
+                            this.units = num.pop();
+                            break;
+                    }
+                }
+            }
+            outputNum() {
+                console.log(`hundreds: ${this.hundreds}`);
+                console.log(`tens ${this.tens}`);
+                console.log(`units ${this.units}`);
+            }
+        }
+
+        let myNum1 = new DivNumber;
+        myNum1.partNum(123);
+        myNum1.outputNum();
+        let myNum2 = new DivNumber;
+        myNum2.partNum(1112454);
+        myNum2.outputNum();
+    </script>
+</body>
+
+</html>
