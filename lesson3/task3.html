@@ -16,9 +16,10 @@
 						   price: 1000}
 		];
 		//вариант1
-		let g = products.map(function(prod){prod.price = prod.price + ((prod.price / 100) * 15);
-											return prod})
-		console.log(g)
+		let g = products.map(function(prod){
+											prod.price = prod.price + ((prod.price / 100) * 15);
+												return prod});
+		console.log(g);
 
 		// //вариант2
 		// products.forEach(function(prod){prod.price = prod.price + ((prod.price / 100) * 15)})
