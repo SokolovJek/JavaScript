@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, nam!</p>
+    <p class="d">Quia ipsam eos quo. Quo necessitatibus aut soluta et sed.</p>
+    <p dsdfss='as'>Non culpa maxime officiis assumenda voluptatem similique provident labore inventore.</p>
+
+    <div id="elem" about="Elephant"></div>
+
+
+    <script>
+        'use strict'
+        let a = document.getElementsByTagName('p')
+        console.log(a[0])
+
+        let ab = document.getElementsByClassName('d')
+        console.log(ab)
+        let par = document.createElement('h1')
+        document.body.appendChild(par)
+        par.innerText = 'this i am'
+
+
+
+
+        alert(elem.getAttribute('About')); // (1) 'Elephant', чтение
+
+        elem.setAttribute('Test', 123); // (2), запись
+        alert(elem)
+
+        alert(elem.outerHTML); // (3), посмотрим, есть ли атрибут в HTML (да)
+
+        for (let attr of elem.attributes) { // (4) весь список
+            alert(`${attr.name} = ${attr.value}`);
+        }
+    </script>
+</body>
+
+
+
+
+</html>
