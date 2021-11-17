@@ -30,7 +30,16 @@
         let classCard = document.querySelector(".card");
         console.log(classCard.classList.contains('hidden'));
         classCard.classList.remove('hidden');
-        console.log(classCard.classList.contains('hidden'));
+        console.log(classCard.classList.contains('hidden'));// не правильно
+
+        //правильный вариант
+
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(function (card) {
+            if (card.classList.contains('hidden')) {
+                card.classList.remove('hidden');
+            }
+        });
 
 
     </script>
